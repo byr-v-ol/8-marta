@@ -62,13 +62,21 @@
     .gift-button:hover {
       background-color: #ff1493;
     }
-    .flowers {
+    .fullscreen-image {
       display: none;
-      margin: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
     }
-    .flowers img {
-      width: 50px;
-      margin: 5px;
+    .fullscreen-image img {
+      max-width: 100%;
+      max-height: 100%;
     }
     audio {
       display: none;
@@ -101,15 +109,11 @@
 
   <button class="gift-button" onclick="showFlowers()">🎁</button>
 
-  <div class="flowers" id="flowers">
-    <img src="r-1.jpg" alt="Роза">
-    <img src="t-1.webp" alt="Тюльпан">
-    <img src="r-2.jpg" alt="Роза">
-    <img src="t-2.webp" alt="Тюльпан">
+  <div class="fullscreen-image" id="fullscreen-image">
+    <img src="r-1.jpg" alt="Цветы">
   </div>
 
   <audio id="music" src="music.mp3" loop></audio>
-
 
   <script>
     function showVideo(videoFile) {
@@ -126,9 +130,9 @@
     }
 
     function showFlowers() {
-      const flowers = document.getElementById('flowers');
+      const fullscreenImage = document.getElementById('fullscreen-image');
       const music = document.getElementById('music');
-      flowers.style.display = 'block';
+      fullscreenImage.style.display = 'flex';
       music.play();
     }
   </script>
