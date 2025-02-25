@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С 8 Марта!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff69b4;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    .poem {
+      font-style: italic;
+      margin: 20px;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px;
+    }
+    .buttons button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .buttons button:hover {
+      background-color: #ff1493;
+    }
+    .video-container {
+      display: none;
+      margin: 20px;
+    }
+    .gift-button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 20px auto;
+    }
+    .gift-button:hover {
+      background-color: #ff1493;
+    }
+    .flowers {
+      display: none;
+      margin: 20px;
+    }
+    .flowers img {
+      width: 50px;
+      margin: 5px;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>С Международным женским днём!</h1>
+    <div class="poem">
+      Пусть весна подарит вам тепло,<br>
+      Улыбки, радость и добро!<br>
+      Пусть счастье льётся через край,<br>
+      И мир вам дарит светлый май!
+    </div>
+  </header>
+
+  <div class="buttons">
+    <button onclick="showVideo('vova.mp4')">Поздравление от Вовы</button>
+    <button onclick="showVideo('sasha.mp4')">Поздравление от Саши</button>
+    <button onclick="showVideo('kolya.mp4')">Поздравление от Коли</button>
+    <button onclick="showVideo('oleg.mp4')">Поздравление от Олега</button>
+  </div>
+
+  <div class="video-container" id="video-container">
+    <video id="video" width="100%" controls onended="hideVideo()">
+      Ваш браузер не поддерживает видео.
+    </video>
+  </div>
+
+  <button class="gift-button" onclick="showFlowers()">🎁</button>
+
+  <div class="flowers" id="flowers">
+    <img src="rose.png" alt="Роза">
+    <img src="tulip.png" alt="Тюльпан">
+    <img src="rose.png" alt="Роза">
+    <img src="tulip.png" alt="Тюльпан">
+  </div>
+
+  <audio id="music" src="music.mp3" loop></audio>
+
+  <script>
+    function showVideo(videoFile) {
+      const videoContainer = document.getElementById('video-container');
+      const video = document.getElementById('video');
+      video.src = videoFile;
+      videoContainer.style.display = 'block';
+      video.play();
+    }
+
+    function hideVideo() {
+      const videoContainer = document.getElementById('video-container');
+      videoContainer.style.display = 'none';
+    }
+
+    function showFlowers() {
+      const flowers = document.getElementById('flowers');
+      const music = document.getElementById('music');
+      flowers.style.display = 'block';
+      music.play();
+    }
+  </script>
+</body>
+</html>
