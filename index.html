@@ -115,10 +115,10 @@
     <img id="slideshow-image" src="" alt="Цветы">
   </div>
 
-  <audio id="music" src="music.mp3" loop></audio>
+  <audio id="music" src="darite_zvety.mp3" loop></audio>
 
   <script>
-    const images = ['r-1.jpg', 't-1.webp', 'r-3.jpg', 'r-4.jpg', 'r-5.jpg']; // Список картинок
+    const images = ['r-1.webp', 't-1.webp', 'rom-1.webp', 'r-2.webp', 't-2.webp', 'rom-2.webp','r-3.webp', 't-3.webp', 'rom-3.webp','r-4.webp', 't-4.webp', 'm-1.webp']; // Список картинок
     let currentImageIndex = 0;
     let slideshowInterval;
 
@@ -152,7 +152,7 @@
       slideshowInterval = setInterval(() => {
         currentImageIndex = (currentImageIndex + 1) % images.length;
         slideshowImage.src = images[currentImageIndex];
-      }, 2000); // Интервал 2 секунды
+      }, 3000); // Интервал 3 секунды
     }
 
     // Остановка слайд-шоу при клике на картинку
