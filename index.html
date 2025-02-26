@@ -118,7 +118,12 @@
   <audio id="music" src="darite_zvety.mp3" loop></audio>
 
   <script>
-    const images = ['r-1.webp', 't-1.webp', 'rom-1.webp', 'r-2.webp', 't-2.webp', 'rom-2.webp','r-3.webp', 't-3.webp', 'rom-3.webp','r-4.webp', 't-4.webp', 'm-1.webp']; // Список картинок
+    const images = [
+      'r-1.webp', 't-1.webp', 'rom-1.webp', 
+      'r-2.webp', 't-2.webp', 'rom-2.webp',
+      'r-3.webp', 't-3.webp', 'rom-3.webp',
+      'r-4.webp', 't-4.webp', 'm-1.webp'
+    ]; // Список картинок
     let currentImageIndex = 0;
     let slideshowInterval;
 
@@ -149,19 +154,31 @@
     function startSlideshow() {
       const slideshowImage = document.getElementById('slideshow-image');
       slideshowImage.src = images[currentImageIndex];
+
       slideshowInterval = setInterval(() => {
         currentImageIndex = (currentImageIndex + 1) % images.length;
+
+        // Если слайд-шоу завершено (последняя картинка)
+        if (currentImageIndex === 0) {
+          stopSlideshow();
+          return;
+        }
+
         slideshowImage.src = images[currentImageIndex];
       }, 3000); // Интервал 3 секунды
     }
 
-    // Остановка слайд-шоу при клике на картинку
-    document.getElementById('fullscreen-image').addEventListener('click', () => {
+    function stopSlideshow() {
       clearInterval(slideshowInterval);
       const fullscreenImage = document.getElementById('fullscreen-image');
       fullscreenImage.style.display = 'none';
       const music = document.getElementById('music');
       music.pause();
+    }
+
+    // Остановка слайд-шоу при клике на картинку
+    document.getElementById('fullscreen-image').addEventListener('click', () => {
+      stopSlideshow();
     });
   </script>
 </body>
