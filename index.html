@@ -83,6 +83,13 @@
     audio {
       display: none;
     }
+    .round-image {
+        width: 60px; /* Размер изображения */
+        height: 60px; /* Размер изображения */
+        border-radius: 50%; /* Делаем изображение круглым */
+        object-fit: cover; /* Обрезаем изображение, чтобы оно не искажалось */
+        vertical-align: middle; /* Выравниваем изображение по центру текста */
+    }
   </style>
 </head>
 <body>
@@ -97,12 +104,19 @@
   </header>
 
   <div class="buttons">
-    <button onclick="showVideo('vova.mp4')">Поздравление от Вовы</button>
-    <button onclick="showVideo('sasha.mp4')">Поздравление от Саши</button>
-    <button onclick="showVideo('kolya.mp4')">Поздравление от Коли</button>
-    <button onclick="showVideo('oleg.mp4')">Поздравление от Олега</button>
-  </div>
-
+    <button onclick="showVideo('Oleg.mp4')">
+        Поздравление от Олега <img src="oleg.jpg" alt="Олег" class="round-image">
+    </button>
+    <button onclick="showVideo('kolya.mp4')">
+        Поздравление от Коли <img src="kolya.jpg" alt="Коля" class="round-image">
+    </button>
+    <button onclick="showVideo('vova.mp4')">
+        Поздравление от Вовы <img src="vova.jpg" alt="Вова" class="round-image">
+    </button>
+    <button onclick="showVideo('sasha.mp4')">
+        Поздравление от Саши <img src="sasha.jpg" alt="Саша" class="round-image">
+    </button>
+</div>
   <div class="video-container" id="video-container">
     <video id="video" width="100%" controls onended="hideVideo()">
       Ваш браузер не поддерживает видео.
