@@ -14,47 +14,128 @@
       background-image: url('f-1.webp'); /* Фоновая картинка */
       background-size: cover;
       background-position: center;
+      animation: fadeIn 2s ease-in-out; /* Анимация появления страницы */
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     header {
       background-color: #ff69b4;
       color: white;
       padding: 20px;
+      animation: slideDown 1s ease-in-out; /* Анимация появления заголовка */
     }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
     h1 {
       font-size: 24px;
       margin: 0;
+      animation: pulse 2s infinite; /* Анимация пульсации заголовка */
     }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
     .poem {
       font-style: italic;
       margin: 20px;
+      animation: fadeInText 2s ease-in-out, colorChange 5s infinite; /* Анимация появления текста и переливания цветов */
+      color: white; /* Основной цвет текста */
     }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes colorChange {
+      0% {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; /* Розовый оттенок */
+      }
+      50% {
+        text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; /* Яркий розовый */
+      }
+      100% {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; /* Возврат к начальному цвету */
+      }
+    }
+
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin: 20px;
+      animation: fadeInButtons 2s ease-in-out; /* Анимация появления кнопок */
     }
+
+    @keyframes fadeInButtons {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .buttons button {
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 10px;
-    height: 65px; /* Фиксированная высота кнопок */
-    display: flex;
-    align-items: center; /* Выравнивание содержимого по центру */
-    justify-content: center; /* Выравнивание текста и картинки по центру */
-    gap: 10px; /* Расстояние между текстом и картинкой */
-}
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 10px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s, transform 0.3s; /* Плавное изменение цвета и масштаба */
+    }
+
     .buttons button:hover {
       background-color: #ff1493;
+      transform: scale(1.05); /* Увеличение кнопки при наведении */
     }
+
     .video-container {
       display: none;
       margin: 20px;
+      animation: fadeIn 1s ease-in-out; /* Анимация появления видео */
     }
+
     .gift-button {
       background-color: #ff69b4;
       color: white;
@@ -64,10 +145,22 @@
       cursor: pointer;
       border-radius: 10px;
       margin: 20px auto;
+      animation: bounce 2s infinite; /* Анимация подпрыгивания кнопки */
     }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
     .gift-button:hover {
       background-color: #ff1493;
     }
+
     .fullscreen-image {
       display: none;
       position: fixed;
@@ -79,21 +172,48 @@
       z-index: 1000;
       justify-content: center;
       align-items: center;
+      animation: fadeIn 0.5s ease-in-out; /* Анимация появления полноэкранного изображения */
     }
+
     .fullscreen-image img {
-      max-width: 90%; /* Максимальная ширина картинки */
-      max-height: 90%; /* Максимальная высота картинки */
-      object-fit: contain; /* Сохраняет пропорции */
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      animation: zoomIn 0.5s ease-in-out; /* Анимация увеличения изображения */
     }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
     audio {
       display: none;
     }
+
     .round-image {
-        width: 50px; /* Размер изображения */
-        height: 50px; /* Размер изображения */
-        border-radius: 50%; /* Делаем изображение круглым */
-        object-fit: cover; /* Обрезаем изображение, чтобы оно не искажалось */
-        vertical-align: middle; /* Выравниваем изображение по центру текста */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+      animation: pulseImage 2s infinite; /* Анимация пульсации круглых изображений */
+    }
+
+    @keyframes pulseImage {
+      0% {
+        transform: scale(1); /* Нормальный размер */
+      }
+      50% {
+        transform: scale(1.1); /* Увеличение на 10% */
+      }
+      100% {
+        transform: scale(1); /* Возврат к нормальному размеру */
+      }
     }
   </style>
 </head>
@@ -121,7 +241,8 @@
     <button onclick="showVideo('sasha.mp4')">
         Поздравление от Саши <img src="sasha.jpg" alt="Саша" class="round-image">
     </button>
-</div>
+  </div>
+
   <div class="video-container" id="video-container">
     <video id="video" width="100%" controls onended="hideVideo()">
       Ваш браузер не поддерживает видео.
