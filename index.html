@@ -46,6 +46,7 @@
       font-size: 24px;
       margin: 0;
       animation: pulse 2s infinite; /* Анимация пульсации заголовка */
+      color: #8b0043; /* Темный розовый для заголовка */
     }
 
     @keyframes pulse {
@@ -79,16 +80,16 @@
     }
 
     @keyframes colorChange {
-      0% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; /* Розовый оттенок */
-      }
-      50% {
-        text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; /* Яркий розовый */
-      }
-      100% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; /* Возврат к начальному цвету */
-      }
+    0% {
+        text-shadow: 0 0 10px #655ec9, 0 0 20px #0927d3; /* Светло-синий */
     }
+    50% {
+        text-shadow: 0 0 10px #047979, 0 0 20px #035757; /* Голубой */
+    }
+    100% {
+        text-shadow: 0 0 10px #3a9bc2, 0 0 20px #1cabe4;; /* Возврат к начальному цвету */
+    }
+}
 
     .buttons {
       display: flex;
